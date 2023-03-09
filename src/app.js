@@ -1,7 +1,15 @@
 const express = require("express");
-const db = require("./utils/database");
+const cors = require("cors");
+const morgan = require("morgan");
 
-const PORT = 8000;
+const db = require("./utils/database");
+const initModel = require("./models/initModel");
+
+const app = express();
+
+app.use(cors());
+app.use(morgan("dev"));
+app.use(express.json());
 
 db.authenticate()
   .then(() => {
@@ -10,3 +18,11 @@ db.authenticate()
   .catch((e) => {
     console.log(e);
   });
+
+initModel();
+
+db.sync()
+  .then(() => console.log("Base de datos sync"))
+  .catch((error) => console.log(error));
+
+const PORT = 8000;
