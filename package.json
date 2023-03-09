@@ -1,0 +1,24 @@
+{
+  "name": "tercer-entregable",
+  "version": "1.0.0",
+  "description": "APIS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Enrique Chavez",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.29.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
