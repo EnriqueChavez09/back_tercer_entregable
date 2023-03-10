@@ -21,7 +21,7 @@ class UserService {
   }
   static async detail(id) {
     try {
-      const user = User.findByPk(id);
+      const user = await User.findByPk(id);
       return user;
     } catch (error) {
       throw error;

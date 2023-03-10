@@ -21,7 +21,7 @@ class CategoryService {
   }
   static async detail(id) {
     try {
-      const category = Category.findByPk(id);
+      const category = await Category.findByPk(id);
       return category;
     } catch (error) {
       throw error;
