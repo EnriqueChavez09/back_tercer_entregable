@@ -1,9 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-
 const db = require("./utils/database");
 const initModel = require("./models/initModel");
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
@@ -26,3 +26,9 @@ db.sync()
   .catch((error) => console.log(error));
 
 const PORT = 8000;
+
+app.use(userRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
